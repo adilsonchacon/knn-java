@@ -1,0 +1,12 @@
+[main] INFO br.poli.ecomp.rp.KNN - === Dataset info ===
+[main] INFO br.poli.ecomp.rp.KNN - Dataset name = optdigits
+[main] INFO br.poli.ecomp.rp.KNN - Number of instances = 5620
+[main] INFO br.poli.ecomp.rp.KNN - Number of attributes = 65
+[main] INFO br.poli.ecomp.rp.KNN - Number of classes = 10
+[main] INFO br.poli.ecomp.rp.KNN - === Configuration ===
+[main] INFO br.poli.ecomp.rp.KNN - K = 5
+[main] INFO br.poli.ecomp.rp.KNN - Distance measure = EuclideanDistance
+[main] INFO br.poli.ecomp.rp.KNN - === Result ===
+[main] INFO br.poli.ecomp.rp.KNN - Correctly Classified Instances 		5515.0 (98.131676%)
+[main] INFO br.poli.ecomp.rp.KNN - Incorrectly Classified Instances 		105.0 (1.8683274%)
+[main] INFO br.poli.ecomp.rp.KNN - Time taken to classify 		84.006714 s
