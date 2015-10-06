@@ -6,6 +6,7 @@ A KNN implemention in Java.
 2. Using eclipse, select `File > Import`.Under `Maven`, choose `Existing Maven Projects`.
 3. Point to the directory where the `pom.xml` is stored.
 4. Select the project and then `Finish`.
+5. Install dependencies and build with `Right click on the project > Run as > Maven install`.
 
 ## Usage
 Using the project is very straightforward:
