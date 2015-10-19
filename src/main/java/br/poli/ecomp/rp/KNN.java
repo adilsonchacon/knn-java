@@ -29,7 +29,7 @@ public class KNN {
 	/**
 	 * If the dataset is not provided, uses the default dataset.
 	 */
-	public static final String ARFF_FILE_PATH = "/optdigits.arff";
+	public String arffFilePath;
 
 	/**
 	 * K nearest neighbors.
@@ -60,6 +60,20 @@ public class KNN {
 	 *            - the distance function to calculate the similarity.
 	 */
 	public KNN(int K, DistanceMeasure distanceMeasure) {
+    this(K, distanceMeasure, "/optdigits.arff");
+	}
+
+	/**
+	 * Constructor.
+	 * 
+	 * @param K
+	 *            - number of nearest neighbors.
+	 * @param distanceMeasure
+	 *            - the distance function to calculate the similarity.
+	 * @param arffFile
+	 *            - Database arff file.
+	 */
+	public KNN(int K, DistanceMeasure distanceMeasure, String arffFilePath) {
 		this.K = K;
 		this.distanceMeasure = distanceMeasure;
 		this.result = new ClassificationResult();
@@ -74,8 +88,7 @@ public class KNN {
 	 *             - if an error occurs when reading the file
 	 */
 	public ArffReader readArff(String arffPath) throws IOException {
-		InputStream resourceAsStream = this.getClass().getResourceAsStream(arffPath);
-		Reader reader = new InputStreamReader(resourceAsStream);
+		BufferedReader reader = new BufferedReader(new FileReader(arffPath));
 		return new ArffReader(reader);
 	}
 
@@ -90,7 +103,7 @@ public class KNN {
 	private void load(String arffPath) throws IOException {
 		/* set the default value */
 		if (arffPath == null) {
-			arffPath = ARFF_FILE_PATH;
+			arffPath = this.arffFilePath;
 		}
 
 		/* read the arff file */
